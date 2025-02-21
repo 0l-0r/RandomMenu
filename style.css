@@ -1,0 +1,199 @@
+/* @font-face {
+  font-family: "PeoplefirstILTTF";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2501-1@1.1/PeoplefirstILTTF.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+} */
+
+/* @font-face {
+  font-family: "YoonChildfundkoreaManSeh";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2408@1.0/YoonChildfundkoreaManSeh.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+   윤초록어린이 만세(초록우산 어린이 재단) 
+} */
+
+@font-face {
+  font-family: "SolinsunnyR";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/SolinsunnyR.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+  /* 솔인써니체 */
+}
+
+@font-face {
+  font-family: "UhBeeGENWOO";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_five@.2.0/UhBeeGENWOO.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+  /* 어비 뒤죽박죽체 */
+}
+
+@font-face {
+  font-family: "UhBeeUZ";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_five@.2.0/UhBeeUZ.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+  /* 어비 유진체 (비슷)*/
+}
+
+@font-face {
+  font-family: "UhBeeSunhong";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_five@.2.0/UhBeeSunhong.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+  /* 어비 선홍체 */
+}
+
+body {
+  font-family: "SolinsunnyR", sans-serif;
+}
+.stopBtn {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.stopBtn:active {
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+
+/* 데스트톱  */
+@media (min-width: 1024px) {
+  header {
+    width: 100%;
+    height: 10%;
+    margin-top: 3vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  main {
+    width: 100%;
+    height: 50vh;
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  h1 {
+    font-size: 12vh;
+  }
+
+  .headerImg {
+    width: 8vw;
+    height: 8vw;
+    margin-right: 4vw;
+  }
+
+  .foodsImg {
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2vh;
+    object-fit: contain;
+    margin-bottom: 2vh;
+  }
+
+  #randomFoodImg {
+    width: 18vw;
+    object-fit: contain;
+  }
+
+  .btn {
+    height: 15%;
+  }
+
+  .stopBtn {
+    margin-top: 5vh;
+    font-size: 3vh;
+    width: 22vh;
+    height: 7vh;
+    font-family: "SolinsunnyR", sans-serif;
+  }
+
+  span {
+    font-size: 5vh;
+  }
+
+  .textTop,
+  .textBottom {
+    height: 5vh;
+  }
+}
+
+/* 모바일 */
+@media screen and (max-width: 430px) and (max-height: 932px) {
+  header {
+    height: 30vw;
+    margin-top: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  main {
+    width: 100vw;
+    height: 70%;
+    margin-top: 1vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  h1 {
+    font-size: 3.5vh;
+  }
+
+  .headerImg {
+    width: 15vw;
+    height: 15vw;
+    margin-right: 4vw;
+  }
+
+  .foodsImg {
+    height: 38vh;
+    margin-top: 3vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #randomFoodImg {
+    width: 75vw;
+    object-fit: contain;
+  }
+
+  .btn {
+    height: 15%;
+  }
+
+  .stopBtn {
+    margin-top: 5vh;
+    font-size: 3vh;
+    width: 22vh;
+    height: 7vh;
+    font-family: "SolinsunnyR", sans-serif;
+  }
+
+  span {
+    font-size: 5vh;
+  }
+
+  .textTop,
+  .textBottom {
+    height: 5vh;
+  }
+}

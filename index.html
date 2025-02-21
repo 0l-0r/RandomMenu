@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>밥성찐이야</title>
+    <link rel="icon" href="/source/img/bob.png" type="image/png" />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- meta tag -->
+    <meta name="title" content="밥성진" />
+    <meta name="description" content="오늘 밥은 뭘로 떄릴까?" />
+    <meta name="image" content="/source/img/bob.png" />
+
+    <!-- OG meta tag  -->
+    <meta property="og:title" content="밥성진" />
+    <meta property="og:description" content="오늘 밥은 뭘로 떄릴까?" />
+    <meta property="og:image" content="https://example.com/nfc-preview.jpg" />
+    <meta property="og:url" content="https://your-nfc-url.com" />
+
+    <!-- X meta tag -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <!-- <meta name="twitter:site" content="@DAY6BOBSUNG_JIN" /> -->
+    <meta name="twitter:title" content="밥성진" />
+    <meta name="twitter:description" content="오늘 밥은 뭘로 떄릴까?" />
+    <meta name="twitter:image" content="" />
+  </head>
+  <body>
+    <header>
+      <img class="headerImg" src="/source/img/bob.png" />
+      <h1>야들아 밥묵자 뭐 묵을래?</h1>
+    </header>
+
+    <main>
+      <div class="textTop">
+        <span style="display: none">오늘은</span>
+      </div>
+
+      <div class="foodsImg">
+        <!-- add randomly interval img -->
+        <img id="randomFoodImg" src="" />
+      </div>
+
+      <div class="textBottom">
+        <span class="resultText" style="display: none">요걸로 함 때리보자</span>
+      </div>
+      <div class="btn">
+        <button
+          class="stopBtn"
+          style="
+            border: 0.0625rem solid;
+            border-radius: 1.875rem;
+            background-color: rgba(0, 0, 0, 0);
+          "
+          type="button"
+        >
+          골라봐리
+        </button>
+      </div>
+    </main>
+    <script src="index.js"></script>
+  </body>
+</html>
