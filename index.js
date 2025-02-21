@@ -234,24 +234,18 @@ const foodImgs = [
   "./source/img/Food_99.png",
 ]; //이미지 처리 고민해보기
 
-//
-
-let isRunning = false;
-
-function randomizeImage() {
-  if (!isRunning) return;
-
-  const randomIndex = Math.floor(Math.random() * foodImgs.length);
-  document.getElementById("randomFoodImg").src = foodImgs[randomIndex];
-
-  requestAnimationFrame(randomizeImage); // 다음 프레임에 호출
-}
+let intervalId;
 
 function startRandom() {
-  if (isRunning) return; // 이미 실행 중이면 중복 실행 방지
-  isRunning = true;
-  randomizeImage(); // 첫 번째 호출
+  if (intervalId) return; // 이미 실행 중이면 중복 실행 방지
+
+  intervalId = setInterval(() => {
+    const randomIndex = Math.floor(Math.random() * foodImgs.length);
+    document.getElementById("randomFoodImg").src = foodImgs[randomIndex];
+  }, 30);
 }
+
+document.addEventListener("DOMContentLoaded", startRandom); // 페이지 로드 시 자동 실행
 
 document.querySelector(".stopBtn").addEventListener("click", function (e) {
   const stopBtn = e.target;
@@ -259,21 +253,20 @@ document.querySelector(".stopBtn").addEventListener("click", function (e) {
   const resultTextSpan = document.querySelector(".textBottom .resultText");
 
   if (stopBtn.innerText.trim() === "골라봐리") {
-    // 인터벌 멈추고 텍스트 변경
-    isRunning = false;
+    // 현재 골라봐리면 → 인터벌 멈추고 텍스트 변경
+    // 버튼을 누른 후 인터벌 정지까지 갭이 생김 간격 줄이는 거 고민해보기
     clearInterval(intervalId);
     intervalId = null;
-
     stopBtn.innerHTML = `맘에 안 든다고?<br>골치아프데이<br>그래 함 다시 골라봐라`;
     stopBtn.style.fontSize = "3vh"; // 텍스트 크기 변경
     stopBtn.style.width = "30vh"; // 버튼 너비 변경
     stopBtn.style.height = "14vh";
     stopBtn.style.lineHeight = "0.9";
 
-    textTopSpan.style.display = "inline";
+    textTopSpan.style.display = "inline"; // span 보이기
     resultTextSpan.style.display = "inline";
   } else {
-    // 인터벌 시작 & 텍스트 변경
+    // 그 외 경우 → 인터벌 다시 시작 & 텍스트 변경
     startRandom();
     stopBtn.innerText = "골라봐리";
     stopBtn.style.fontSize = "3vh"; // 텍스트 크기 원래대로
@@ -281,7 +274,7 @@ document.querySelector(".stopBtn").addEventListener("click", function (e) {
     stopBtn.style.height = "8vh";
     stopBtn.style.lineHeight = "normal";
 
-    textTopSpan.style.display = "none";
+    textTopSpan.style.display = "none"; // span 숨기기
     resultTextSpan.style.display = "none";
   }
 });
