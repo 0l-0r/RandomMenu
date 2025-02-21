@@ -137,7 +137,7 @@ body {
 @media screen and (max-width: 430px) and (max-height: 932px) {
   header {
     height: 30vw;
-    margin-top: 5vh;
+    margin-top: 2vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -186,6 +186,21 @@ body {
     width: 22vh;
     height: 7vh;
     font-family: "SolinsunnyR", sans-serif;
+    .stopBtn {
+      border: 0.0625rem solid;
+      border-radius: 1.875rem;
+      background-color: rgba(0, 0, 0, 0);
+      outline: none; /* 포커스 상태에서 파란색 테두리 제거 */
+      -webkit-appearance: none; /* Safari에서 버튼 기본 스타일 제거 */
+      appearance: none; /* 기본 버튼 스타일 제거 */
+      color: black; /* 모바일에서 텍스트 색상 변경 */
+    }
+  }
+
+  .stopBtn:active,
+  .stopBtn:focus {
+    background-color: rgba(0, 0, 0, 0); /* 클릭 시 배경 색상 설정 */
+    border: 0.0625rem solid; /* 클릭 시 테두리 색상 설정 */
   }
 
   span {
