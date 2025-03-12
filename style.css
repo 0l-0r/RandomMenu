@@ -172,7 +172,7 @@ body {
   }
 
   #randomFoodImg {
-    width: 75vw;
+    width: 65vw;
     object-fit: contain;
   }
 
@@ -210,6 +210,6 @@ body {
 
   .textTop,
   .textBottom {
-    height: 5vh;
+    height: 6vh;
   }
 }
