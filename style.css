@@ -165,14 +165,14 @@ body {
 
   .foodsImg {
     height: 35vh;
-    padding: 5%;
+    padding: 0.625rem;
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
   #randomFoodImg {
-    width: 65vw;
+    width: 60vw;
     object-fit: contain;
   }
 
