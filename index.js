@@ -103,38 +103,43 @@ const foodImgs = [
 ]; //이미지 처리 고민해보기
 
 let intervalId;
+let lastImage = ""; // 마지막으로 표시된 이미지 저장
 
+// 랜덤 이미지 시작 함수
 function startRandom() {
   if (intervalId) return; // 이미 실행 중이면 중복 실행 방지
 
   intervalId = setInterval(() => {
     const randomIndex = Math.floor(Math.random() * foodImgs.length);
-    document.getElementById("randomFoodImg").src = foodImgs[randomIndex];
-  }, 30);
+    lastImage = foodImgs[randomIndex]; // 마지막 이미지 저장
+    document.getElementById("randomFoodImg").src = lastImage;
+  }, 200); // 200ms 간격으로 이미지 변경
 }
 
-// document.addEventListener("DOMContentLoaded", startRandom); // 페이지 로드 시 자동 실행
-
+// 버튼 클릭 이벤트 처리
 document.querySelector(".stopBtn").addEventListener("click", function (e) {
   const stopBtn = e.target;
   const textTopSpan = document.querySelector(".textTop span");
   const resultTextSpan = document.querySelector(".textBottom .resultText");
 
   if (stopBtn.innerText.trim() === "골라봐리") {
-    // 현재 골라봐리면 → 인터벌 멈추고 텍스트 변경
-    // 버튼을 누른 후 인터벌 정지까지 갭이 생김 간격 줄이는 거 고민해보기
+    // 랜덤 이미지 멈추고 텍스트 변경
     clearInterval(intervalId);
     intervalId = null;
+
     stopBtn.innerHTML = `맘에 안 든다고?<br>골치아프데이<br>그래 함 다시 골라봐라`;
     stopBtn.style.fontSize = "3vh"; // 텍스트 크기 변경
-    stopBtn.style.width = "30vh"; // 버튼 너비 변경
-    stopBtn.style.height = "14vh";
+    stopBtn.style.width = "30vh"; // 버튼 크기 변경
+    stopBtn.style.height = "12.5vh";
     stopBtn.style.lineHeight = "0.9";
 
     textTopSpan.style.display = "inline"; // span 보이기
     resultTextSpan.style.display = "inline";
+
+    // 마지막 이미지를 유지
+    document.getElementById("randomFoodImg").src = lastImage;
   } else {
-    // 그 외 경우 → 인터벌 다시 시작 & 텍스트 변경
+    // 랜덤 이미지 시작 & 텍스트 변경
     startRandom();
     stopBtn.innerText = "골라봐리";
     stopBtn.style.fontSize = "3vh"; // 텍스트 크기 원래대로
@@ -148,6 +153,6 @@ document.querySelector(".stopBtn").addEventListener("click", function (e) {
 });
 
 // 페이지가 완전히 로드된 후 실행
-window.onload = function () {
-  setTimeout(startRandom, 0); // 페이지가 로드된 직후 실행
-};
+document.addEventListener("DOMContentLoaded", () => {
+  setTimeout(startRandom, 0); // 페이지 로드 직후 랜덤 이미지 시작
+});
