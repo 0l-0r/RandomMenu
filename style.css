@@ -212,4 +212,8 @@ body {
   .textBottom {
     height: 6vh;
   }
+
+  .textTopSpan {
+    font-size: 4vh;
+  }
 }
