@@ -128,9 +128,9 @@ document.querySelector(".stopBtn").addEventListener("click", function (e) {
     intervalId = null;
 
     stopBtn.innerHTML = `맘에 안 든다고?<br>골치아프데이<br>그래 함 다시 골라봐라`;
-    stopBtn.style.fontSize = "3vh"; // 텍스트 크기 변경
+    stopBtn.style.fontSize = "2.5vh"; // 텍스트 크기 변경
     stopBtn.style.width = "30vh"; // 버튼 크기 변경
-    stopBtn.style.height = "12.5vh";
+    stopBtn.style.height = "14vh";
     stopBtn.style.lineHeight = "0.9";
 
     textTopSpan.style.display = "inline"; // span 보이기
